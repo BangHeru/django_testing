@@ -1,6 +1,9 @@
+
+# ignore db.sqlite3 file on testing directory
 /testing/db.sqlite3
 
-
+# ignore .vscode directory
 .vscode/
 
+#ignore venv directory
 venv/

@@ -1,0 +1,43 @@
+<!-- templates/signup.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<div class="form-signin col-md-8 mb-6 border border-primary rounded">
+  <div class="text-center kepala">
+  <h2>Daftar</h2>
+  </div>
+<hr>
+
+<form class="form-horizontal" method="POST" >
+  {% csrf_token %}
+  
+  {% for field in form %}
+    <p>
+      <!-- <div class="mb-3">
+        {{ field.label_tag }}<br>
+      </div> -->
+      <!-- <div class="mb-2 "> -->
+        {{ field }}
+      <!-- </div> -->
+      {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+      {% for error in field.errors %}
+      <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </p>
+    {% endfor %}
+
+    <hr>
+    <button type="submit" class="btn btn-success btn-block btn-lg">Daftar</button>
+    <p class="text-center" style="padding-top: 15px;">atau</p>
+    <a href="{% url 'login' %}" class="btn btn-primary btn-block btn-lg" >Login</a>
+
+</form>
+</div>
+
+
+{% endblock %}

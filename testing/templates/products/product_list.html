@@ -1,0 +1,13 @@
+
+
+{% for item in product %}
+    
+<a href="{% url 'detail' item.id%}">{{ item.name }}</a>
+<p> {{ item.description }}</p>
+<p> $ {{ item.price }} </p>
+<p><a href="{% url 'detail' item.id%}">Detail</a></p>
+<hr>
+    
+
+{% endfor %}
+<p><a href="{% url 'logout' %}">logout</a></p>
